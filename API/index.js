@@ -7,12 +7,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 //Conectar a mongodb 
-mongoose.Promise = global.Promise;
-mongoose.connect =('mongodb://localhost/veterinaria',{
-    useNewUrlParser:true, 
-    useUnifiedTopology:true,
-    useFindAndModify:false
-});
+require('./database');
 
 //Habilitar el body parser
 app.use(bodyParser.json());
